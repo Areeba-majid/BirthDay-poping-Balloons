@@ -1,0 +1,112 @@
+/* Global body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://cdn.shopify.com/s/files/1/0257/6718/2416/files/Pastel_Birthday_background.jpg?v=1595051319");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Balloon container for holding balloons */
+.balloon_container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* Balloon styles */
+.balloon {
+    display: inline-block;
+    width: 70px; /* Reduced size for better fit on mobile */
+    height: 90px;
+    background-color: rgba(255, 165, 0, 0.8); /* Orange balloons */
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.8rem; /* Adjusted font size */
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+    line-height: 90px;
+    z-index: 1;
+    animation: floatUp 4s infinite ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Changing each balloon's color for variety */
+.balloon1:nth-child(1) { background-color: #ff6b6b; }
+.balloon1:nth-child(2) { background-color: #f0e130; }
+.balloon1:nth-child(3) { background-color: #6bc6ff; }
+.balloon1:nth-child(4) { background-color: #ffafcc; }
+.balloon1:nth-child(5) { background-color: #cdb4db; }
+
+.balloon2:nth-child(1) { background-color: #b19cd9; }
+.balloon2:nth-child(2) { background-color: #a4cbb8; }
+.balloon2:nth-child(3) { background-color: #ffcad4; }
+.balloon2:nth-child(4) { background-color: #ffafaf; }
+.balloon2:nth-child(5) { background-color: #f5a9b8; }
+
+.balloon3:nth-child(1) { background-color: #4ecdc4; }
+.balloon3:nth-child(2) { background-color: #ff6b6b; }
+.balloon3:nth-child(3) { background-color: #ffd700; }
+
+/* Hover effect on balloons */
+.balloon:hover {
+    transform: scale(1.2);
+}
+
+/* Balloon floating animation */
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-40px) rotate(3deg); }
+    100% { transform: translateY(0) rotate(0); }
+}
+
+/* Different animation durations to create staggered floating effect */
+.balloon1 { animation-duration: 3s; }
+.balloon2 { animation-duration: 4s; }
+.balloon3 { animation-duration: 5s; }
+
+/* Responsive for Mobile Screens */
+@media (max-width: 768px) {
+    .balloon {
+        width: 60px; /* Smaller size for mobile */
+        height: 80px;
+        font-size: 1.6rem; /* Smaller text size */
+        line-height: 80px;
+    }
+
+    .balloon_container {
+        margin: 5px; /* Less margin for better spacing */
+    }
+
+    body {
+        font-size: 14px; /* Slightly reduce global font size on mobile */
+    }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+    .balloon {
+        width: 50px; /* Even smaller for very small screens */
+        height: 70px;
+        font-size: 1.4rem; /* Further reduce text size */
+        line-height: 70px;
+    }
+
+    .balloon_container {
+        margin: 3px; /* More compact on extra small screens */
+    }
+
+    body {
+        font-size: 12px; /* Adjust body font for tiny screens */
+    }
+}
